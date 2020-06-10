@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import api from '../../services/api';
 import './styles.css';
+import { Link } from "react-router-dom";
 
 export default class Main extends Component {
   state = {//o Metodo render fica monitorando as alterações no objeto state
@@ -50,7 +51,7 @@ export default class Main extends Component {
           <article key={product._id}>
             <strong>{product.title}</strong>
             <p>{product.description}</p>
-            <a href={""}>Acessar</a>
+            <Link to={`/products/${product._id}`}>Acessar</Link>
           </article>)
       }
       <div className={"actions"}>
